@@ -8,12 +8,14 @@
 <h1>Login_Page</h1>
 Benutzername:
 <input type="text" name="username" id="username" maxlength="30">
-<br>
+<br><br>
 Passwort:
-<input type="password" name="passwort" id="passwort" maxlength="30">
-<br>
-<input type="checkbox" onchange="document.getElementById('passwort').type = this.checked ? 'text' : 'password'">Passwort anzeigen</input>
-<br>
-<button type="submit" name="loginButton" id="loginButton">Login</button>
+<input type="password" name="password" id="password" maxlength="30">
+<br><br>
+<input type="checkbox" onchange="document.getElementById('password').type = this.checked ? 'text' : 'password'">Passwort anzeigen</input>
+<br><br>
+<button type="submit" name="loginButton" id="loginButton" onclick="sendToServer()">Login</button>
+
+<script src="Login.js"></script>
 </body>
 </html>
