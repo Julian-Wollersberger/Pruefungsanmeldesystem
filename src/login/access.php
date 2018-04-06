@@ -18,13 +18,10 @@
         <button name="login" type="submit">Login</button>
       </p>
 
-      <button name="new"
-			onClick="window.open('registrierung.php','_blank','width=300,height=300');">Registrieren</button>
 		</form>
 
 		<?php
         if(isset($_POST["login"])){
-
           $username=$_POST["username"];
           $password=$_POST["passwort"];
           if(!$username)
@@ -74,9 +71,6 @@
               echo "<br><font color='red'>"."Benutzer nicht gefunden!"."</font>";
             }
           }
-        }
-        if(isset($_POST["login"])){
-
         }
 		?>
 	</body>
