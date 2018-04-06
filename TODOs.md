@@ -6,6 +6,10 @@
 + from what to what date
 
 + User page
++ Use Bootstrap
++ In htlwels.at only a link to our site
+
++ Safe passwords encryted on the server side (salted).
 
 ## ``` Julian ```
 + Git Repository
