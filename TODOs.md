@@ -11,8 +11,7 @@
 + Git Repository
 
 ## ```Max```
-+ Debug Server installation
-
++ A basic login site
 
 ## ```Stefan```
 
