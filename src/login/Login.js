@@ -9,6 +9,8 @@ function sendToServer() {
     }else if(password==null||password==""){
         //future: set style to a red border @ password
         alert("password empty")
+    }else{
+        alert("Logging in")
     }
 
 }
