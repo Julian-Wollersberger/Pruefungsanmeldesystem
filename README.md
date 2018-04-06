@@ -12,3 +12,12 @@ the name "ems". The name should be automatically
 resolved if you are in the same network.
 
 To test it type "http://ems/index.html" in the browser.
+
+# Test Access
+```bash
+ssh wolli@ems
+cisco
+
+su
+123cisco123
+```

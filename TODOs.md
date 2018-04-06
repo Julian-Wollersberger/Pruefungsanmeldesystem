@@ -1,6 +1,8 @@
 #  What everyone of us should do
 
 ## ``` Not asigned ```
++ Change Passwords and usernames before deployment!
+
 + Admin page
 + unlock a test for a user
 + from what to what date
