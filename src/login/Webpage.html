@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login_Funktion</title>
+</head>
+
+<body>
+<h1>Login_Page</h1>
+Benutzername:
+<input type="text" name="username" id="username" maxlength="30">
+<br>
+Passwort:
+<input type="password" name="passwort" id="passwort" maxlength="30">
+<br>
+<input type="checkbox" onchange="document.getElementById('passwort').type = this.checked ? 'text' : 'password'">Passwort anzeigen</input>
+<br>
+<button type="submit" name="loginButton" id="loginButton">Login</button>
+</body>
+</html>
