@@ -14,7 +14,7 @@
 
     <!-- Zusätzliche Stylesheets -->
     <link href="form/form-validation.css" rel="stylesheet">
-    <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+
   </head>
 
   <body class="bg-light">
@@ -23,7 +23,7 @@
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
         <h2>NOST Prüfungsanmeldung</h2>
-        <p></p>        <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+        <p></p>
       </div>
         <div class="col-md-8 order-md-1 mx-auto">
           <h4 class="mb-3">Daten des Prüflings</h4>
@@ -53,24 +53,6 @@
                 </div>
               </div>
 
-              <div class="col-md-3 mb-3">        <link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-                <label for="email">Klasse</label>
-                <input class="form-control" id="class" placeholder="1EHIT" type="text">
-                <div class="invalid-feedback">
-                  Bitte geben Sie eine gültige Klasse ein
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-9 mb-3">
-                <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                <input class="form-control" id="email" placeholder="you@example.com" type="email">
-                <div class="invalid-feedback">
-                  Bitte geben Sie eine gültige E-Mail Adresse ein
-                </div>
-              </div>
-
               <div class="col-md-3 mb-3">
                 <label for="email">Klasse</label>
                 <input class="form-control" id="class" placeholder="1EHIT" type="text">
@@ -80,25 +62,29 @@
               </div>
             </div>
 
-            <div class="container">
             <div class="row">
-               <div class='col-sm-6'>
-                   <div class="form-group">
-                       <div class='input-group date' id='datetimepicker1'>
-                           <input type='text' class="form-control" />
-                           <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                           </span>
-                       </div>
-                   </div>
-               </div>
-               <script type="text/javascript">
-                   $(function () {
-                       $('#datetimepicker1').datetimepicker();
-                   });
-               </script>
+              <div class="col-md-6 mb-3">
+                <label for="email">Datum <span class="text-muted">(Optional)</span></label>
+                <input class="form-control" id="date" placeholder="" type="date">
+
+                <div class="invalid-feedback">
+                  Bitte geben Sie ein gültiges Datum ein
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="email">Zeit</label>
+                <input class="form-control" id="time" placeholder="1EHIT" type="time">
+                <div class="invalid-feedback">
+                  Bitte geben Sie eine gültige Zeit ein
+                </div>
+              </div>
             </div>
-            </div>
+
+
+
+
+
 
 
 
