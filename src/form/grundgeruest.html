@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>Checkout example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="form/bootstrap.css" rel="stylesheet">
+
+    <!-- Zusätzliche Stylesheets -->
+    <link href="form/form-validation.css" rel="stylesheet">
+
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
+        <h2>Formularvorlage</h2>
+        <p></p>
+      </div>
+        <div class="col-md-10 order-md-1 mx-auto">
+          <h4 class="mb-3">Daten des Prüflings</h4>
+          <form class="needs-validation" novalidate="" action="speichereAnmeldung.php" method="post">
+
+            <!-- ACHTUNG! Damit das Speichern in das CSV-File funktioniert müssen die IDs umgebogen werden -->
+            <!-- Wird ein Feld nicht benötigt kann das required Attribut entfernt werden -->
+            <!-- Die meisten Elemente des Forms befinden sich in Rows wurdena aber mit Leerzeilen so angeordnet dass man sie leichter kopieren kann -->
+
+
+
+
+            <!-- komplette Zeile -->
+            <div class="row">
+
+              <div class="col-md-12 mb-3">
+                <label for="eineID">Volle Zeile</label>
+                <input class="form-control" id="eineID" placeholder="Ein Text" required="" type="text">
+                <div class="invalid-feedback">
+                  Bitte geben Sie einen gültigen xyz ein
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+            <!-- halbierte Zeile -->
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label for="eineID">Halbe Zeile</label>
+                <input class="form-control" id="eineID" placeholder="Ein Text" required="" type="text">
+                <div class="invalid-feedback">
+                  Bitte geben Sie einen gültigen xyz ein
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="eineID">Halbe Zeile</label>
+                <input class="form-control" id="eineID" placeholder="Ein Text" required="" type="text">
+                <div class="invalid-feedback">
+                  Bitte geben Sie einen gültigen xyz ein
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+            <!-- gedrittelte Zeile -->
+            <div class="row">
+
+              <div class="col-md-4 mb-3">
+                <label for="eineID">X</label>
+                <input class="form-control" id="eineID" placeholder="Ein Text" required="" type="text">
+                <div class="invalid-feedback">
+                  Bitte geben Sie einen gültigen xyz ein
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="eineID">Y</label>
+                <input class="form-control" id="eineID" placeholder="Ein Text" required="" type="text">
+                <div class="invalid-feedback">
+                  Bitte geben Sie einen gültigen xyz ein
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label for="eineID">Z</label>
+                <input class="form-control" id="eineID" placeholder="Ein Text" required="" type="text">
+                <div class="invalid-feedback">
+                  Bitte geben Sie einen gültigen xyz ein
+                </div>
+              </div>
+
+            </div>
+
+
+            <br>
+            <br>
+
+
+
+            <!-- Email-Eingabe (dreiviertel Zeile)-->
+            <div class="row">
+
+              <div class="col-md-9 mb-3">
+                <label for="email">Email </label>
+                <input class="form-control" id="email" placeholder="you@example.com" type="email" required="">
+                <div class="invalid-feedback">
+                  Bitte geben Sie eine gültige E-Mail Adresse ein
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Email-Eingabe (halbe Zeile)-->
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label for="email">Email </label>
+                <input class="form-control" id="email" placeholder="you@example.com" type="email" required="">
+                <div class="invalid-feedback">
+                  Bitte geben Sie eine gültige E-Mail Adresse ein
+                </div>
+              </div>
+
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <!-- Datum-Eingabe (halbe Zeile)-->
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label for="date">Datum </label>
+                <input class="form-control" id="date" placeholder="" type="date" required="">
+                <div class="invalid-feedback">
+                  Bitte geben Sie ein gültiges Datum ein
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Datum-Eingabe (viertel Zeile)-->
+            <div class="row">
+
+              <div class="col-md-3 mb-3">
+                <label for="date">Datum </label>
+                <input class="form-control" id="date" placeholder="" type="date" required="">
+                <div class="invalid-feedback">
+                  Bitte geben Sie ein gültiges Datum ein
+                </div>
+              </div>
+
+            </div>
+
+
+            <br>
+            <br>
+
+
+            <!-- Zeit-Eingabe (halbe Zeile)-->
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label for="time">Zeit</label>
+                <input class="form-control" id="time" placeholder="1EHIT" type="time" required="">
+                <div class="invalid-feedback">
+                  Bitte geben Sie eine gültige Zeit ein
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Zeit-Eingabe (viertel Zeile)-->
+            <div class="row">
+
+              <div class="col-md-3 mb-3">
+                <label for="time">Zeit</label>
+                <input class="form-control" id="time" placeholder="1EHIT" type="time" required="">
+                <div class="invalid-feedback">
+                  Bitte geben Sie eine gültige Zeit ein
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Zeit-Eingabe (sechstel Zeile)-->
+            <div class="row">
+
+              <div class="col-md-2 mb-3">
+                <label for="time">Zeit</label>
+                <input class="form-control" id="time" placeholder="1EHIT" type="time" required="">
+                <div class="invalid-feedback">
+                  Bitte geben Sie eine gültige Zeit ein
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <br>
+            <br>
+
+
+            <!-- Dropdown -->
+            <div class="row">
+
+              <div class="col-md-5 mb-3">
+                <label for="dropdown">Dropdown</label>
+                <select class="custom-select d-block w-100" id="dropdown" required="">
+                  <option value="" selected="selected">Choose...</option>
+                  <option>X</option>
+                  <option>Y</option>
+                  <option>Z</option>
+                </select>
+                <div class="invalid-feedback">
+                  Bitte wählen sie ein xyz aus
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Dropdown (drittel Zeile)-->
+            <div class="row">
+
+              <div class="col-md-4 mb-3">
+                <label for="dropdown">Dropdown</label>
+                <select class="custom-select d-block w-100" id="dropdown" required="">
+                  <option value="" selected="selected">Choose...</option>
+                  <option>X</option>
+                  <option>Y</option>
+                  <option>Z</option>
+                </select>
+                <div class="invalid-feedback">
+                  Bitte wählen sie ein xyz aus
+                </div>
+              </div>
+
+            </div>
+
+
+            <!-- Dropdown (viertel Zeile)-->
+            <div class="row">
+
+              <div class="col-md-3 mb-3">
+                <label for="dropdown">Dropdown</label>
+                <select class="custom-select d-block w-100" id="dropdown" required="">
+                  <option value="" selected="selected">Choose...</option>
+                  <option>X</option>
+                  <option>Y</option>
+                  <option>Z</option>
+                </select>
+                <div class="invalid-feedback">
+                  Bitte wählen sie ein xyz aus
+                </div>
+              </div>
+
+            </div>
+
+
+
+            <br>
+            <br>
+
+
+
+            <!-- Checkboxen -->
+            <h4 class="mb-3">Checkbox</h4>
+
+            <hr class="mb-4">
+
+            <div class="row">
+
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="checkbox1" type="checkbox" required="">
+                <label class="custom-control-label" for="checkbox1">Das ist eine Checkbox</label>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="checkbox2" type="checkbox" required="">
+                <label class="custom-control-label" for="checkbox2">Das ist eine Checkbox</label>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="custom-control custom-checkbox">
+                <input class="custom-control-input" id="checkbox3" type="checkbox" required="">
+                <label class="custom-control-label" for="checkbox3">Das ist eine Checkbox</label>
+              </div>
+
+            </div>
+            <hr class="mb-4">
+
+
+
+            <br>
+            <br>
+
+
+
+            <!-- Radio-Button -->
+            <h4 class="mb-3">Radio-Button</h4>
+
+            <hr class="mb-4">
+
+            <div class="row">
+
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input id="radio1" name="paymentMethod" class="custom-control-input" checked="checked" required="" type="radio">
+                  <label class="custom-control-label" for="radio1">Das ist ein Radio-Button</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                  <input id="radio2" name="paymentMethod" class="custom-control-input" required="" type="radio">
+                  <label class="custom-control-label" for="radio2">Das ist ein Radio-Button</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                  <input id="radio3" name="paymentMethod" class="custom-control-input" required="" type="radio">
+                  <label class="custom-control-label" for="radio3">Das ist ein Radio-Buttonl</label>
+                </div>
+              </div>
+
+            </div>
+            <hr class="mb-4">
+
+
+
+
+
+
+
+
+
+
+
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© HTL-Wels 2018 </p>
+
+      </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="form/jquery-3.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="form/popper.js"></script>
+    <script src="form/bootstrap.js"></script>
+    <script src="form/holder.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+
+
+</body></html>
