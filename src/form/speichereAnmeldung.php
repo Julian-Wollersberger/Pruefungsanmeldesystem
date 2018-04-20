@@ -9,70 +9,66 @@
  * https://www.w3schools.com/php/php_forms.asp
  */
 
+/** überflüssige Leerzeichen entfernen, strip_tags,
+ * Strichpunkte durch Beistriche ersetzen.
+ */
 function aufarbeiten($text)
 {
-//überflüssige Leerzeichen entfernen
+    //überflüssige Leerzeichen entfernen
     $text=trim($text);
-// HTML-Tags entfernen
+    // HTML-Tags entfernen
     $text=strip_tags($text);
-    //Andere Steuerzeichen konvertieren.
-    //Soll für \n helfen.
-    //$text = htmlentities($text, ENT_COMPAT, "UTF-8");
-// alle Tilde-Zeichen durch Nichts ersetzen
-    //Es gibt es einen HTML-Code für ~ : &#126;
-    $text=str_replace("~","&#126;",$text);
+
+    // Umbrüche im textarea-Bereich durch <br> ersetzen
+    $text = str_replace("\r ", " ", $text);
+    $text = str_replace("\n", " ", $text);
+
+    $text = str_replace(";",",",$text);
+
     return $text;
 }
 
 
-function speichereInput()
-{
-    //Für was ist diese Abfrage?
-    if (/*isset($_POST["submit"])*/ true) {
-        $_POST["name"] = aufarbeiten($_POST["name"]);
-        $_POST["subject"] = aufarbeiten($_POST["subject"]);
-        $_POST["message"] = aufarbeiten($_POST["message"]);
+function speichereInput() {
 
-// Fehlermeldungen
-        $error = "";
-        if (!$_POST["name"]) $error .= "Bitte geben Sie ihren Namen ein.<br>";
-        if (!$_POST["subject"]) $error .= "Bitte geben Sie den Betreff an.<br>";
-        if (!$_POST["message"]) $error .= "Bitte geben Sie eine Nachricht ein.<br>";
-        if ($error) {
-// Ausgabe der Fehlermeldung
-            echo "<font color='red'> $error </font>";
-        } else {
+    $firstName = aufarbeiten($_POST["fistName"]);
+    $lastName = aufarbeiten($_POST["lastName"]);
+    $email = aufarbeiten($_POST["email"]);
+    $class = aufarbeiten($_POST["class"]);
+    $date = aufarbeiten($_POST["date"]);
+    $time = aufarbeiten($_POST["time"]);
 
-// Datum erzeugen
-            $datum = date("d M Y H:i:s");
-            //echo $datum;
-// Umbrüche im textarea-Bereich durch <br> ersetzen
-            //TODO Bug: In gbuch.txt wurde ein Zeilenumbruch geschrieben bei der Nachricht.
-            $_POST["message"] = str_replace("\r ", "<br>", $_POST["message"]);
-            $_POST["message"] = str_replace("\n", "<br>", $_POST["message"]);
-            $_POST["message"] = str_replace("<br><br>", "<br>", $_POST["message"]);
+    // Fehlermeldungen
+    $error = "";
+    if (!$firstName . $lastName . $email . $class . $date . $time)
+        $error .= "Bitte alle Eingabefelder ausfüllen.<br>";
 
-// Eintrag in die Textdatei
-            $text = $_POST["name"] . "~"
-                . $_POST["subject"] . "~"
-                . $datum . "~"
-                . $_POST["message"] . "\r\n";
+    //TODO date, time, email überprüfen
+    /*
+     * //check for a valid email address
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+         $error[] = 'Please enter a valid email address';
+    }*/
 
-            //echo $text;
+    if ($error) {
+        // Ausgabe der Fehlermeldung
+        echo "<span style=\"color: red; \"> $error </span>";
+    } else {
 
-            //Nun speichern
-            $fh = fopen("gbuch.txt", "a");
-            flock($fh, LOCK_EX);
-            fputs($fh, $text);
-            flock($fh, LOCK_UN);
-            fclose($fh);
-        }
+        // Eintrag in die Textdatei
+        $text = !$firstName . $lastName . $email . $class . $date . $time;
+        //echo $text;
+
+        //Nun speichern
+        $fh = fopen("anmeldungen.csv", "a");
+        flock($fh, LOCK_EX);
+        fputs($fh, $text);
+        flock($fh, LOCK_UN);
+        fclose($fh);
+
+        echo "Anmeldung gespeichert. ";
     }
-    else echo "Submit ist nicht gesetzt!";
 }
-
-
-
 ?>
 
 <html>
@@ -90,11 +86,6 @@ function speichereInput()
     echo "<script language='Javascript'> window.close(); </script>";
     // Das dort unten ist Debug-Zeug.
 ?>
-
-
-Welcome <?php echo aufarbeiten($_POST["name"]); ?><br>
-Betreff: <?php echo aufarbeiten($_POST["subject"]); ?><br>
-Nachricht: <?php echo aufarbeiten($_POST["message"]); ?>
 
 </body>
 </html>
