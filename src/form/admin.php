@@ -27,10 +27,10 @@
         if($eintrag){
           $element=explode(";",$eintrag[0]);
 
-          $date_von=$eintrag[0];
-          $time_von=$eintrag[1];
-          $date_bis=$eintrag[2];
-          $time_bis=$eintrag[3];
+          $date_von=$element[0];
+          $time_von=$element[1];
+          $date_bis=$element[2];
+          $time_bis=$element[3];
         }
         else {
           $date_von="";
