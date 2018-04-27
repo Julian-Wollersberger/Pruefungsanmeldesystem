@@ -31,7 +31,7 @@ function aufarbeiten($text)
 
 function speichereInput() {
 
-    $firstName = aufarbeiten($_POST["fistName"]);
+    $firstName = aufarbeiten($_POST["firstName"]);
     $lastName = aufarbeiten($_POST["lastName"]);
     $email = aufarbeiten($_POST["email"]);
     $class = aufarbeiten($_POST["class"]);
@@ -40,7 +40,7 @@ function speichereInput() {
 
     // Fehlermeldungen
     $error = "";
-    if (!$firstName . $lastName . $email . $class . $date . $time)
+    if (!($firstName . $lastName . $email . $class . $date . $time))
         $error .= "Bitte alle Eingabefelder ausfüllen.<br>";
 
     //TODO date, time, email überprüfen
@@ -60,7 +60,7 @@ function speichereInput() {
         //echo $text;
 
         //Nun speichern
-        $fh = fopen("anmeldungen.csv", "a");
+        $fh = fopen("../anmeldungen/anmeldungen.csv", "a");
         flock($fh, LOCK_EX);
         fputs($fh, $text);
         flock($fh, LOCK_UN);
@@ -75,9 +75,8 @@ function speichereInput() {
 <head>
     <meta charset="UTF-8">
     <title>
-        Gästebuch
+        NOST
     </title>
-    <link rel="stylesheet" type="text/css" href="css/meine_website.css">
 </head>
 <body>
 
