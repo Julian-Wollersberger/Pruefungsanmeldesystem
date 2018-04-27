@@ -34,7 +34,7 @@ function speichereInput() {
     $date_von = aufarbeiten($_POST["date_von"]);
     $time_von = aufarbeiten($_POST["time_von"]);
     $date_bis = aufarbeiten($_POST["date_bis"]);
-    $time_bis = aufarbeiten($_POST["time_bis"]);
+    $time_bis = aufarbeiten($_POST["time_bispeichers"]);
 
 
     // Fehlermeldungen
@@ -62,7 +62,7 @@ function speichereInput() {
          * sudo chown daemon anmeldungen.csv
          */
         //Nun speichern
-        $fh = fopen("../anmeldungen/anmeldungen.csv", "w");
+        $fh = fopen("../anmeldungen/offen.csv", "w");
         flock($fh, LOCK_EX);
         fputs($fh, $text);
         flock($fh, LOCK_UN);
