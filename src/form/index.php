@@ -46,11 +46,12 @@
    }
  }
 
-$von=$date_von." ".$time_von.":00:0";
-$bis=$date_bis." ".$time_bis.":00:0";
+$today=date("m/d/Y H:i");
+$von=$date_von." ".$time_von;
+$bis=$date_bis." ".$time_bis;
 
 
-if(time()>strtotime($von) && time()<strtotime($bis))
+if($today>$von && $today<$bis)
 {
     echo "<span style=\"color: red; \"> Nice </span>";
 }
