@@ -20,12 +20,34 @@
 
   <body class="bg-light">
     <?php
+
+    /** überflüssige Leerzeichen entfernen, strip_tags,
+     * Strichpunkte durch Beistriche ersetzen.
+     */
+    function aufarbeiten($text)
+    {
+        //überflüssige Leerzeichen entfernen
+        $text=trim($text);cherschers
+        // HTML-Tags entfernen
+        $text=strip_tags($text);
+
+        // Umbrüche im textarea-Bereich durch <br> ersetzen
+        $text = str_replace("\r ", " ", $text);
+        $text = str_replace("\n", " ", $text);
+
+        $text = str_replace(";",",",$text);
+
+        return $text;
+    }
+
+
       if (file_exists("../anmeldungen/offen.csv"))
       {
         $eintrag=file("../anmeldungen/offen.csv");
 
         if($eintrag){
-          $element=explode(";",$eintrag[0]);
+
+          $element=explode(";",aufarbeiten($eintrag[0]));
 
           $date_von=$element[0];
           $time_von=$element[1];

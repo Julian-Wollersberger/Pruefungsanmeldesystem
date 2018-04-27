@@ -15,7 +15,7 @@
 function aufarbeiten($text)
 {
     //überflüssige Leerzeichen entfernen
-    $text=trim($text);
+    $text=trim($text);cherschers
     // HTML-Tags entfernen
     $text=strip_tags($text);
 
