@@ -27,7 +27,7 @@
     function aufarbeiten($text)
     {
         //überflüssige Leerzeichen entfernen
-        $text=trim($text);cherschers
+        $text=trim($text);
         // HTML-Tags entfernen
         $text=strip_tags($text);
 
