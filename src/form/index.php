@@ -6,7 +6,7 @@
  * Time: 15:13
  */
 
- 
+
  /** überflüssige Leerzeichen entfernen, strip_tags,
   * Strichpunkte durch Beistriche ersetzen.
   */
@@ -46,8 +46,11 @@
    }
  }
 
+$von=$date_von." ".$time_von.":00:0"
+$bis=$date_bis." ".$time_bis.":00:0"
 
-if(date() > strtotime(date_von) && time() > strtotime(time_von) && date() < strtotime(date_bis) &&  time() < strtotime(time_bis))
+
+if(time()>strtotime($von) && time()<strtotime($bis))
 {
     echo "<span style=\"color: red; \"> Nice </span>";
 }
