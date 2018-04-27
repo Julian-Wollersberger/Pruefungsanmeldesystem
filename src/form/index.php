@@ -6,6 +6,25 @@
  * Time: 15:13
  */
 
+ 
+ /** überflüssige Leerzeichen entfernen, strip_tags,
+  * Strichpunkte durch Beistriche ersetzen.
+  */
+ function aufarbeiten($text)
+ {
+     //überflüssige Leerzeichen entfernen
+     $text=trim($text);
+     // HTML-Tags entfernen
+     $text=strip_tags($text);
+
+
+
+     return $text;
+ }
+
+
+
+
  if (file_exists("../anmeldungen/offen.csv"))
  {
    $eintrag=file("../anmeldungen/offen.csv");
