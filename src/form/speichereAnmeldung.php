@@ -49,6 +49,9 @@ function speichereInput() {
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
          $error .= "Die E-Mail-Adresse $email ist ungültig.<br>";
     }
+    //$dateTime = date_create_from_format('Y-m-d', 'Apr 30, 2010');
+    //echo date_format($dateTime, 'Y-m-d');
+
 
     if ($error) {
         // Ausgabe der Fehlermeldung
