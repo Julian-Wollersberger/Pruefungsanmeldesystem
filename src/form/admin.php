@@ -58,7 +58,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
-                <input class="form-control" id="date_von" name="date_von" placeholder="<?php echo $date_von;?>" type="date" required="">
+                <input class="form-control" id="date_von" name="date_von" value="<?php echo $date_von;?>" type="date" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie ein gültiges Datum ein
                 </div>
@@ -66,7 +66,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="date">Zeit</label>
-                <input class="form-control" id="time_von" name="time_von" placeholder="<?php echo $time_von;?>" type="time" required="">
+                <input class="form-control" id="time_von" name="time_von" value="<?php echo $time_von;?>" type="time" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie eine gültige Zeit ein
                 </div>
@@ -80,7 +80,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
-                <input class="form-control" id="date_bis" name="date_bis" placeholder="<?php echo $date_bis;?>" type="date" required="">
+                <input class="form-control" id="date_bis" name="date_bis" value="<?php echo $date_bis;?>" type="date" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie ein gültiges Datum ein
                 </div>
@@ -88,7 +88,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="date">Zeit</label>
-                <input class="form-control" id="time_bis" name="time_bis"  placeholder="<?php echo $time_bis;?>" type="time" required="">
+                <input class="form-control" id="time_bis" name="time_bis"  value="<?php echo $time_bis;?>" type="time" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie eine gültige Zeit ein
                 </div>
