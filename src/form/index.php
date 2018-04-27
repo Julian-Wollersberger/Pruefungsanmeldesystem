@@ -46,8 +46,8 @@
    }
  }
 
-$von=$date_von." ".$time_von.":00:0"
-$bis=$date_bis." ".$time_bis.":00:0"
+$von=$date_von." ".$time_von.":00:0";
+$bis=$date_bis." ".$time_bis.":00:0";
 
 
 if(time()>strtotime($von) && time()<strtotime($bis))
