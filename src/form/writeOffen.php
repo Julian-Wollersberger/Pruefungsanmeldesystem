@@ -34,7 +34,7 @@ function speichereInput() {
     $date_von = aufarbeiten($_POST["date_von"]);
     $time_von = aufarbeiten($_POST["time_von"]);
     $date_bis = aufarbeiten($_POST["date_bis"]);
-    $time_bis = aufarbeiten($_POST["time_bispeichers"]);
+    $time_bis = aufarbeiten($_POST["time_bis"]);
 
 
     // Fehlermeldungen
