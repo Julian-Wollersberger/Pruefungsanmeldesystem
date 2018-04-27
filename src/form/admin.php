@@ -19,7 +19,47 @@
   </head>
 
   <body class="bg-light">
+    <?php
 
+    /** überflüssige Leerzeichen entfernen, strip_tags,
+     * Strichpunkte durch Beistriche ersetzen.
+     */
+    function aufarbeiten($text)
+    {
+        //überflüssige Leerzeichen entfernen
+        $text=trim($text);
+        // HTML-Tags entfernen
+        $text=strip_tags($text);
+
+
+
+        return $text;
+    }
+
+
+      if (file_exists("../anmeldungen/offen.csv"))
+      {
+        $eintrag=file("../anmeldungen/offen.csv");
+
+        if($eintrag){
+
+          $element=explode(";",aufarbeiten($eintrag[0]));
+
+          $date_von=$element[0];
+          $time_von=$element[1];
+          $date_bis=$element[2];
+          $time_bis=$element[3];
+        }
+        else {
+          $date_von="";
+          $time_von="";
+          $date_bis="";
+          $time_bis="";
+        }
+
+
+      }
+    ?>
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
@@ -36,7 +76,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
-                <input class="form-control" id="date_von" name="date_von" placeholder="" type="date" required="">
+                <input class="form-control" id="date_von" name="date_von" value="<?php echo $date_von;?>" type="date" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie ein gültiges Datum ein
                 </div>
@@ -44,7 +84,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="date">Zeit</label>
-                <input class="form-control" id="time_von" name="time_von" type="time" required="">
+                <input class="form-control" id="time_von" name="time_von" value="<?php echo $time_von;?>" type="time" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie eine gültige Zeit ein
                 </div>
@@ -58,7 +98,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
-                <input class="form-control" id="date_bis" name="date_bis" placeholder="" type="date" required="">
+                <input class="form-control" id="date_bis" name="date_bis" value="<?php echo $date_bis;?>" type="date" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie ein gültiges Datum ein
                 </div>
@@ -66,7 +106,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="date">Zeit</label>
-                <input class="form-control" id="time_bis" name="time_bis" type="time" required="">
+                <input class="form-control" id="time_bis" name="time_bis"  value="<?php echo $time_bis;?>" type="time" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie eine gültige Zeit ein
                 </div>
