@@ -40,15 +40,15 @@ function speichereInput() {
 
     // Fehlermeldungen
     $error = "";
-    if (!($firstName . $lastName . $email . $class . $date . $time))
+    if (!$firstName || !$lastName || !$email ||  !$class || !$date || !$time)
         $error .= "Bitte alle Eingabefelder ausfüllen.<br>";
 
     //TODO date, time, email überprüfen
-    /*
-     * //check for a valid email address
+
+    //check for a valid email address
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-         $error[] = 'Please enter a valid email address';
-    }*/
+         $error .= "Die E-Mail-Adresse $email ist ungültig.<br>";
+    }
 
     if ($error) {
         // Ausgabe der Fehlermeldung
@@ -56,9 +56,17 @@ function speichereInput() {
     } else {
 
         // Eintrag in die Textdatei
-        $text = !$firstName . $lastName . $email . $class . $date . $time;
+        $text = $firstName .';'. $lastName .';'. $email .';'. $class .';'. $date .';'. $time ."\r\n";
         //echo $text;
 
+        /** Beim Erstellen werden wahrscheinlich die Berechtigungen nicht passen.
+         * Der Benutzer kann bei jedem Server anders sein.
+         *
+         * Find apache user:
+         * ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1
+         * Permission:
+         * sudo chown daemon anmeldungen.csv
+         */
         //Nun speichern
         $fh = fopen("../anmeldungen/anmeldungen.csv", "a");
         flock($fh, LOCK_EX);

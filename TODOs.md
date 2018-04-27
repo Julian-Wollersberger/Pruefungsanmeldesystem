@@ -2,10 +2,8 @@
 
 ## ``` Not asigned ```
 + from what to what date
-+ Git Repository
-+ Run Configuration (bash)
 + CSV
-+ bootstrap
++ htaccess (Berechtigungen)
 
 ## ``` Julian ```
 
