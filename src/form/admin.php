@@ -19,7 +19,29 @@
   </head>
 
   <body class="bg-light">
+    <?php
+      if (file_exists("../anmeldungen/offen.csv"))
+      {
+        $eintrag=file("../anmeldungen/offen.csv");
 
+        if($eintrag){
+          $element=explode(";",$eintrag[0]);
+
+          $date_von=$eintrag[0];
+          $time_von=$eintrag[1];
+          $date_bis=$eintrag[2];
+          $time_bis=$eintrag[3];
+        }
+        else {
+          $date_von="";
+          $time_von="";
+          $date_bis="";
+          $time_bis="";
+        }
+
+
+      }
+    ?>
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
@@ -36,7 +58,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
-                <input class="form-control" id="date_von" name="date_von" placeholder="" type="date" required="">
+                <input class="form-control" id="date_von" name="date_von" placeholder="<?php echo $date_von;?>" type="date" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie ein gültiges Datum ein
                 </div>
@@ -44,7 +66,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="date">Zeit</label>
-                <input class="form-control" id="time_von" name="time_von" type="time" required="">
+                <input class="form-control" id="time_von" name="time_von" placeholder="<?php echo $time_von;?>" type="time" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie eine gültige Zeit ein
                 </div>
@@ -58,7 +80,7 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
-                <input class="form-control" id="date_bis" name="date_bis" placeholder="" type="date" required="">
+                <input class="form-control" id="date_bis" name="date_bis" placeholder="<?php echo $date_bis;?>" type="date" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie ein gültiges Datum ein
                 </div>
@@ -66,7 +88,7 @@
 
               <div class="col-md-6 mb-3">
                 <label for="date">Zeit</label>
-                <input class="form-control" id="time_bis" name="time_bis" type="time" required="">
+                <input class="form-control" id="time_bis" name="time_bis"  placeholder="<?php echo $time_bis;?>" type="time" required="">
                 <div class="invalid-feedback">
                   Bitte geben Sie eine gültige Zeit ein
                 </div>
