@@ -56,8 +56,6 @@
           $date_bis="";
           $time_bis="";
         }
-
-
       }
     ?>
     <div class="container">
