@@ -31,11 +31,7 @@
         // HTML-Tags entfernen
         $text=strip_tags($text);
 
-        // Umbrüche im textarea-Bereich durch <br> ersetzen
-        $text = str_replace("\r ", " ", $text);
-        $text = str_replace("\n", " ", $text);
 
-        $text = str_replace(";",",",$text);
 
         return $text;
     }
