@@ -25,6 +25,22 @@
         <h2>Prüfungsanmeldung</h2>
         <p></p>
      </div>
+     <form class="needs-validation" novalidate="" action="speichereAnmeldung.php" method="post">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -43,7 +59,9 @@
  function aufarbeiten($text)
  {
      //überflüssige Leerzeichen entfernen
-     $text=trim($text);
+     $text=trim($text);echo '<img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
+<h2>Prüfungsanmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
+<p></p>';
      // HTML-Tags entfernen
      $text=strip_tags($text);
 
@@ -68,7 +86,9 @@
      $date_bis=$element[2];
      $time_bis=$element[3];
    }
-   else {
+   else {echo '<img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
+<h2>Prüfungsanmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
+<p></p>';
      $date_von="";
      $time_von="";
      $date_bis="";
@@ -94,11 +114,28 @@ else {
 
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
 <footer class="my-5 pt-5 text-muted text-center text-small">
   <p class="mb-1">© HTL-Wels 2018 </p>
 
 </footer>
-</div>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -111,7 +148,7 @@ else {
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
-  'use strict';2018-05-18 14:32
+
 
   window.addEventListener('load', function() {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
