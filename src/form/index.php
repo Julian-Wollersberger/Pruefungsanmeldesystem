@@ -25,7 +25,7 @@
         <h2>Prüfungsanmeldung</h2>
         <p></p>
      </div>
-     <form class="needs-validation" novalidate="" action="speichereAnmeldung.php" method="post">
+     
 
 
 
@@ -59,9 +59,7 @@
  function aufarbeiten($text)
  {
      //überflüssige Leerzeichen entfernen
-     $text=trim($text);echo '<img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
-<h2>Prüfungsanmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
-<p></p>';
+     $text=trim($text);
      // HTML-Tags entfernen
      $text=strip_tags($text);
 
@@ -128,7 +126,7 @@ else {
 
 
 
-</form>
+
 <footer class="my-5 pt-5 text-muted text-center text-small">
   <p class="mb-1">© HTL-Wels 2018 </p>
 
