@@ -46,11 +46,13 @@
    }
  }
 
-$today=date("m/d/Y H:i");
+$today=date("Y-m-d H:i");
 $von=$date_von." ".$time_von;
 $bis=$date_bis." ".$time_bis;
 
-echo $time_von;
+
+
+echo $today;
 echo $von;
 
 
