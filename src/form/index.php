@@ -51,7 +51,11 @@ $von=$date_von." ".$time_von;
 $bis=$date_bis." ".$time_bis;
 
 
-echo "<h4>Die Anmeldung ist von ".$von." bis ".$bis."<h4>";
+echo '<img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
+<h2>Prüfungsanmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
+<p></p>';
+
+echo '<div class="col-md-8 order-md-1 mx-auto text-center"><h4>Die Anmeldung ist von '.$von." bis ".$bis."</h4></div>";
 
 
 if($today>$von && $today<$bis)
@@ -62,42 +66,4 @@ else {
     require("no_form.html");
 }
 
-
-
-
-
-
-?><div class="py-5 text-center">
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-
-    <title>NOST-Anmeldung</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="form/bootstrap.css" rel="stylesheet">
-
-    <!-- Zusätzliche Stylesheets -->
-    <link href="form/form-validation.css" rel="stylesheet">
-
-</head>
-
-<body class="bg-light">
-
-  <img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
-  <h2>Prüfungsanmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
-  <p></p>
-
-
-
-
-
-</body>
-</html>
+?>
