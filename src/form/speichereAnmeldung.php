@@ -26,7 +26,7 @@ function aufarbeiten($text)
     $text = str_replace(";",",",$text);
 
     return $text;
-}
+}    
 
 
 function speichereInput() {

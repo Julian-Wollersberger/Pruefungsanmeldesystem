@@ -73,8 +73,8 @@
 
 
 
- if (file_exists("../anmeldungen/offen.csv"))
- {
+if (file_exists("../anmeldungen/offen.csv"))
+{
    $eintrag=file("../anmeldungen/offen.csv");
 
    if($eintrag){
@@ -91,8 +91,8 @@
      $time_von="";
      $date_bis="";
      $time_bis="";
-   }
- }
+}
+ 
 
 $today=date("Y-m-d H:i");
 $von=$date_von." ".$time_von;
