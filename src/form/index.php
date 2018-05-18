@@ -86,9 +86,7 @@
      $date_bis=$element[2];
      $time_bis=$element[3];
    }
-   else {echo '<img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
-<h2>Prüfungsanmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
-<p></p>';
+   
      $date_von="";
      $time_von="";
      $date_bis="";
