@@ -97,7 +97,7 @@ $von=$date_von." ".$time_von;
 $bis=$date_bis." ".$time_bis;
 
 
-echo '<div class="col-md-8 order-md-1 mx-auto text-center"><h4>Die Anmeldung ist von '.$von." bis ".$bis." offen! </h4></div>";
+echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist von ".$von." bis ".$bis." offen! </h4></div>";
 
 
 if($today>$von && $today<$bis)
