@@ -81,10 +81,6 @@ $von=$date_von." ".$time_von;
 $bis=$date_bis." ".$time_bis;
 
 
-echo '<img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
-<h2>Prüfungsanmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
-<p></p>';
-
 echo '<div class="col-md-8 order-md-1 mx-auto text-center"><h4>Die Anmeldung ist von '.$von." bis ".$bis." offen! </h4></div>";
 
 
