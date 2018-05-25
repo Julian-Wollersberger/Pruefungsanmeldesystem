@@ -8,7 +8,7 @@
 
 
 
-    <title>Anmeldung NOST</title>
+    <title>Administration NOST Anmeldung</title>
 
     <!-- Bootstrap core CSS -->
     <link href="form/bootstrap.css" rel="stylesheet">
@@ -61,7 +61,7 @@
     <div class="container">
       <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="form/htl_logo.png" alt="" width="72" height="72">
-        <h2>Wenn Sie Schüler sind sollten Sie das nicht sehen!</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
+        <h2>Administration der NOST Anmeldung</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
         <p></p>
       </div>
         <div class="col-md-8 order-md-1 mx-auto">
@@ -70,7 +70,6 @@
 
 
             <label for="date"><b>Von</b></label>
-            <hr class="mb-4">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
@@ -92,7 +91,6 @@
 
 
             <label for="date"><b>Bis</b></label>
-            <hr class="mb-4">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="date">Datum</label>
@@ -110,12 +108,31 @@
                 </div>
               </div>
             </div>
-            <hr class="mb-4">
-
-
 
             <button class="btn btn-primary btn-lg btn-block" type="submit">Zeitraum festlegen</button>
           </form>
+
+
+
+          <!------------------- Button zum PDF ----------------->
+            <hr class="mb-4">
+            <h4 class="mb-3">Anmeldedaten herunterladen</h4>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <form class="needs-validation" novalidate="" action="knampf.php" method="post">                     <!-- Welche Datei ?!?!?!?!?!??!?!? -->
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Als PDF</button>
+                    </form>
+                </div>
+
+                <!-- CSV-Datei -->
+                <div class="col-md-6 mb-3">
+                    <form class="needs-validation" novalidate="" action="knampf.php" method="post">                     <!-- Welche Datei ?!?!?!?!?!??!?!? -->
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Als CSV für Excel</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
       </div>
 
