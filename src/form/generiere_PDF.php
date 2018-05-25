@@ -59,13 +59,13 @@ class PDF extends FPDF
 	function Header()
 	{
 		// Logo
-		$this->Image('./form/htl_logo.png',10,6,30);
+		$this->Image('./form/htl_logo.png',10,6,20);
 		// Arial bold 15
-		$this->SetFont('Arial','',15);
+		$this->SetFont('Arial','B',23);
 		// Move to the right
 		$this->Cell(80);
 		// Title
-		$this->Cell(30,10,'Title',1,0,'C');
+		$this->Cell(30,10,utf8_decode('Anmeldungen zur NOST-Prüfung'),0,0,'C');
 		// Line break
 		$this->Ln(20);
 	}

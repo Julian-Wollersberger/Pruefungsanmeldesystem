@@ -77,6 +77,7 @@ if (file_exists("../anmeldungen/offen.csv"))
 
    if($eintrag){
 
+
      $element=explode(";",aufarbeiten($eintrag[0]));
 
      $date_von=$element[0];
@@ -84,11 +85,13 @@ if (file_exists("../anmeldungen/offen.csv"))
      $date_bis=$element[2];
      $time_bis=$element[3];
    }
-   
+   else
+	{
      $date_von="";
      $time_von="";
      $date_bis="";
      $time_bis="";
+	}
 }
  
 
@@ -97,7 +100,9 @@ $von=$date_von." ".$time_von;
 $bis=$date_bis." ".$time_bis;
 
 
-echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist von ".$von." bis ".$bis." offen! </h4></div>";
+echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist offen von<br>".$von."<br>bis<br>".$bis."</h4></div><br>";
+
+
 
 
 if($today>$von && $today<$bis)
@@ -107,6 +112,10 @@ if($today>$von && $today<$bis)
 else {
     require("no_form.html");
 }
+
+
+
+//require("form.html");
 
 ?>
 
