@@ -37,10 +37,11 @@ function speichereInput() {
     $class = aufarbeiten($_POST["class"]);
     $date = aufarbeiten($_POST["date"]);
     $time = aufarbeiten($_POST["time"]);
+	$subject = aufarbeiten($_POST["subject"]);
 
     // Fehlermeldungen
     $error = "";
-    if (!$firstName || !$lastName || !$email ||  !$class || !$date || !$time)
+    if (!$firstName || !$lastName || !$email ||  !$class || !$date || !$time || !$subject)
         $error .= "Bitte alle Eingabefelder ausfüllen.<br>";
 
     //TODO date, time, email überprüfen
@@ -59,7 +60,7 @@ function speichereInput() {
     } else {
 
         // Eintrag in die Textdatei
-        $text = $firstName .';'. $lastName .';'. $email .';'. $class .';'. $date .';'. $time ."\r\n";
+        $text = $firstName .';'. $lastName .';'. $email .';'. $class .';'. $date .';'. $time .';'.$subject."\r\n";
         //echo $text;
 
         /** Beim Erstellen werden wahrscheinlich die Berechtigungen nicht passen.
