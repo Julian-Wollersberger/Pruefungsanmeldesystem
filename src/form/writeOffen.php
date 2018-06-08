@@ -9,6 +9,11 @@
  * https://www.w3schools.com/php/php_forms.asp
  */
 
+/* Hier wird das Datum gespeichert.
+ * Ist auch in index.php */
+const filePath = "../anmeldungen/offen.csv";
+
+
 /** überflüssige Leerzeichen entfernen, strip_tags,
  * Strichpunkte durch Beistriche ersetzen.
  */
@@ -62,7 +67,7 @@ function speichereInput() {
          * sudo chown daemon anmeldungen.csv
          */
         //Nun speichern
-        $fh = fopen("../anmeldungen/offen.csv", "w");
+        $fh = fopen(file, "w");
         flock($fh, LOCK_EX);
         fputs($fh, $text);
         flock($fh, LOCK_UN);
@@ -85,7 +90,6 @@ function speichereInput() {
 <?php
     speichereInput();
     echo "<script language='Javascript'> window.close(); </script>";
-    // Das dort unten ist Debug-Zeug.
 ?>
 
 </body>

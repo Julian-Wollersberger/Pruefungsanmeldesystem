@@ -33,17 +33,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 <?php
 /**
  * Created by PhpStorm.
@@ -51,6 +40,18 @@
  * Date: 27.04.18
  * Time: 15:13
  */
+
+
+/* Funktion:
+ * Wenn die Anmeldung offen ist, wird die Datei
+ * "form.html" weiter unten inkludiert, sonst
+ * "no_form.html"
+ *
+ */
+
+/* Hier wird das Datum gespeichert.
+ * Ist auch in writeOffen.php */
+const offenFilePath = "../anmeldungen/offen.csv";
 
 
  /** überflüssige Leerzeichen entfernen, strip_tags,
@@ -63,8 +64,6 @@
      // HTML-Tags entfernen
      $text=strip_tags($text);
 
-
-
      return $text;
  }
 
@@ -76,7 +75,6 @@ if (file_exists("../anmeldungen/offen.csv"))
    $eintrag=file("../anmeldungen/offen.csv");
 
    if($eintrag){
-
 
      $element=explode(";",aufarbeiten($eintrag[0]));
 
@@ -93,7 +91,6 @@ if (file_exists("../anmeldungen/offen.csv"))
      $time_bis="";
 	}
 }
- 
 
 $today=date("Y-m-d H:i");
 $von=$date_von." ".$time_von;
@@ -103,7 +100,7 @@ $bis=$date_bis." ".$time_bis;
 echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist offen von<br>".$von."<br>bis<br>".$bis."</h4></div><br>";
 
 
-
+/** Inkludiere Das Formular oder die Nicht-offen-Meldung */
 
 if($today>$von && $today<$bis)
 {
