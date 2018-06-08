@@ -26,33 +26,23 @@ function aufarbeiten($text)
     $text = str_replace(";",",",$text);
 
     return $text;
-}    
+}
 
 
 function speichereInput() {
 
-    $firstName = aufarbeiten($_POST["firstName"]);
-    $lastName = aufarbeiten($_POST["lastName"]);
-    $email = aufarbeiten($_POST["email"]);
-    $class = aufarbeiten($_POST["class"]);
-    $date = aufarbeiten($_POST["date"]);
-    $time = aufarbeiten($_POST["time"]);
-	$subject = aufarbeiten($_POST["subject"]);
+    $date_von = aufarbeiten($_POST["date_von"]);
+    $time_von = aufarbeiten($_POST["time_von"]);
+    $date_bis = aufarbeiten($_POST["date_bis"]);
+    $time_bis = aufarbeiten($_POST["time_bis"]);
+
 
     // Fehlermeldungen
     $error = "";
-    if (!$firstName || !$lastName || !$email ||  !$class || !$date || !$time || !$subject)
+    if (!$date_von  || !$time_von || !$date_bis ||  !$time_bis)
         $error .= "Bitte alle Eingabefelder ausfüllen.<br>";
 
     //TODO date, time, email überprüfen
-
-    //check for a valid email address
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-         $error .= "Die E-Mail-Adresse $email ist ungültig.<br>";
-    }
-    //$dateTime = date_create_from_format('Y-m-d', 'Apr 30, 2010');
-    //echo date_format($dateTime, 'Y-m-d');
-
 
     if ($error) {
         // Ausgabe der Fehlermeldung
@@ -60,7 +50,7 @@ function speichereInput() {
     } else {
 
         // Eintrag in die Textdatei
-        $text = $firstName .';'. $lastName .';'. $email .';'. $class .';'. $date .';'. $time .';'.$subject."\r\n";
+        $text = $date_von .';'. $time_von .';'. $date_bis .';'. $time_bis ."\r\n";
         //echo $text;
 
         /** Beim Erstellen werden wahrscheinlich die Berechtigungen nicht passen.
@@ -72,13 +62,13 @@ function speichereInput() {
          * sudo chown daemon anmeldungen.csv
          */
         //Nun speichern
-        $fh = fopen("../anmeldungen/anmeldungen.csv", "a");
+        $fh = fopen("../anmeldungen/offen.csv", "w");
         flock($fh, LOCK_EX);
         fputs($fh, $text);
         flock($fh, LOCK_UN);
         fclose($fh);
 
-        echo "Anmeldung gespeichert. ";
+        echo "Anmeldezeitraum gespeichert. ";
     }
 }
 ?>

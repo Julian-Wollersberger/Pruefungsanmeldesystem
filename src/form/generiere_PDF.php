@@ -27,7 +27,7 @@ class PDF extends FPDF
 		$this->SetFont('Arial','',14);
 
 		// Header
-		$w = array(35,35,55,20,30,15);
+		$w = array(30,30,50,20,25,15,20);
 		for($i=0;$i<count($header);$i++)
 		    $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
 		$this->Ln();
@@ -48,6 +48,7 @@ class PDF extends FPDF
 		    $this->Cell($w[3],6,utf8_decode($row[3]),'LR',0,'C',$fill);
 			$this->Cell($w[4],6,utf8_decode($row[4]),'LR',0,'C',$fill);
 			$this->Cell($w[5],6,utf8_decode($row[5]),'LR',0,'C',$fill);
+			$this->Cell($w[6],6,utf8_decode($row[6]),'LR',0,'C',$fill);
 		    $this->Ln();
 		    $fill = !$fill;
 		}
@@ -86,7 +87,7 @@ class PDF extends FPDF
 
 
 	// Column headings
-	$header = array('Vorname', 'Nachname', 'Email', 'Klasse', 'Datum', 'Zeit');
+	$header = array('Vorname', 'Nachname', 'Email', 'Klasse', 'Datum', 'Zeit','Fach');
 	// Data loading
 	$data = $pdf->LoadData('../anmeldungen/anmeldungen.csv');
 	$pdf->SetFont('Arial','',12);
