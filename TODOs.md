@@ -1,22 +1,14 @@
-#  What everyone of us should do
+#  Was noch zu tun ist:
 
-## ``` Not asigned ```
-+ from what to what date
-+ CSV
-+ htaccess (Berechtigungen)
++ Feld für Fach
++ Die Eingabefelder in PHP auf Plausibelität überprüfen
 
-## ``` Julian ```
-
-
-## ```Max```
-
-## ```Stefan```
-
-# Aufgabenstellung 
-## Release Date: 2018-06-15 (July 15)
-+ Erstellung einer Aufgabenbeschreibung
-+ Arbeits- und Zeitplan (abgespeckt)
-+ Laufende Dokumentation der Arbeit (Zeitaufzeichnung + Inhalt) 
-+ Protokoll
-+ Präsentation der Ergebnisse
-
+# Präsentation
++ Anforderung
++ Ziel
++ Lösungsweg: 
+  + was wurde umgesetzt
+  + was könnte man noch machen
+  + Technik, Architektur
+  + Probleme
++ Ergebnis zeigen
