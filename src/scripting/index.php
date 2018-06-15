@@ -1,3 +1,41 @@
+<?php
+
+	$anmeldungsFile="../anmeldungen/offen.csv";
+	$formFile="form.html";
+	$noFormFile="no_form.html";
+
+ function aufarbeiten($text)
+ {
+     //überflüssige Leerzeichen entfernen
+     $text=trim($text);
+     // HTML-Tags entfernen
+     $text=strip_tags($text);
+     return $text;
+ }
+if (file_exists($anmeldungsFile))
+{
+   $eintrag=file($anmeldungsFile);
+   if($eintrag){
+     $element=explode(";",aufarbeiten($eintrag[0]));
+     $date_von=$element[0];
+     $time_von=$element[1];
+     $date_bis=$element[2];
+     $time_bis=$element[3];
+   }
+   else
+	{
+     $date_von="";
+     $time_von="";
+     $date_bis="";
+     $time_bis="";
+	}
+}
+ 
+$today=date("Y-m-d H:i");
+$von=$date_von." ".$time_von;
+$bis=$date_bis." ".$time_bis;
+?>
+
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -28,79 +66,22 @@
      
 
 
+
+
 <?php
-/**
- * Created by PhpStorm.
- * User: julian
- * Date: 27.04.18
- * Time: 15:13
- */
+if(!$von||!$bis)
+	echo "ERROR";
+else{
+	echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist offen von<br>".$von."<br>bis<br>".$bis."</h4></div><br>";
 
-
- /** überflüssige Leerzeichen entfernen, strip_tags,
-  * Strichpunkte durch Beistriche ersetzen.
-  */
- function aufarbeiten($text)
- {
-     //überflüssige Leerzeichen entfernen
-     $text=trim($text);
-     // HTML-Tags entfernen
-     $text=strip_tags($text);
-
-
-
-     return $text;
- }
-
-
-
-
-if (file_exists("../anmeldungen/offen.csv"))
-{
-   $eintrag=file("../anmeldungen/offen.csv");
-
-   if($eintrag){
-
-
-     $element=explode(";",aufarbeiten($eintrag[0]));
-
-     $date_von=$element[0];
-     $time_von=$element[1];
-     $date_bis=$element[2];
-     $time_bis=$element[3];
-   }
-   else
+	if($today>$von && $today<$bis)
 	{
-     $date_von="";
-     $time_von="";
-     $date_bis="";
-     $time_bis="";
+		require($formFile);
+	}
+	else {
+	    require($noFormFile);
 	}
 }
- 
-
-$today=date("Y-m-d H:i");
-$von=$date_von." ".$time_von;
-$bis=$date_bis." ".$time_bis;
-
-
-echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist offen von<br>".$von."<br>bis<br>".$bis."</h4></div><br>";
-
-
-
-
-if($today>$von && $today<$bis)
-{
-	require("form.html");
-}
-else {
-    require("no_form.html");
-}
-
-
-
-
-
 ?>
 
 
@@ -123,12 +104,9 @@ else {
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
-
-
   window.addEventListener('load', function() {
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
-
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
