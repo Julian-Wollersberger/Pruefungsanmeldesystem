@@ -1,15 +1,15 @@
 <?php
 /*###*/
-function aufarbeiten($text)
+function refac($text)
 {
-    //überflüssige Leerzeichen entfernen
+
     $text=trim($text);
-    // HTML-Tags entfernen
+
     $text=strip_tags($text);
 
-    // Umbrüche im textarea-Bereich durch <br> ersetzen
-    $text = str_replace("\r ", " ", $text);
-    $text = str_replace("\n", " ", $text);
+
+    $text = str_replace("\r ", "", $text);
+    $text = str_replace("\n", "", $text);
 
     $text = str_replace(";",",",$text);
 
@@ -17,10 +17,10 @@ function aufarbeiten($text)
 }
 
 
-$date_von = aufarbeiten($_POST["date_von"]);
-$time_von = aufarbeiten($_POST["time_von"]);
-$date_bis = aufarbeiten($_POST["date_bis"]);
-$time_bis = aufarbeiten($_POST["time_bis"]);
+$date_von = refac($_POST["date_von"]);
+$time_von = refac($_POST["time_von"]);
+$date_bis = refac($_POST["date_bis"]);
+$time_bis = refac($_POST["time_bis"]);
 
 if(!$date_von||!$time_von||!$date_bis||!$time_bis){
 	echo "ERROR";
@@ -64,40 +64,23 @@ fputs($finalFile, "<div class='col-md-8 order-md-1 mx-auto'>
 foreach($scriptData as $line) {
 	fputs($script,$line);
 
-	if(strpos($line,"[br]")!==false)
-		fputs($finalFile, "<br>\n");
-	else if(strpos($line,"[hr]")!==false)
-		fputs($finalFile, "<hr class='mb-4'>\n");
-	else{
-		fputs($finalFile, "<div class='row'>\n");
-		foreach (explode("[",$line) as &$value) {
-			$value=str_replace("]","",$value);
+	fputs($finalFile, "<div class='row'>\n");
+	foreach (explode("[",$line) as &$value) {
+		$value=str_replace("]","",$value);
 
-			$width=explode("#",$value)[1];
-			$tag=explode("=",explode("#",$value)[0])[0];
-			$name=explode("=",explode("#",$value)[0])[1];
+		$width=explode("#",$value)[1];
+		$tag=explode("=",explode("#",$value)[0])[0];
+		$name=explode("=",explode("#",$value)[0])[1];
 
-			if($value!=""){
-				if($tag=="text")
-					fputs($finalFile,  "<h4 class='mb-3'>".$name."</h4>\n");
-				else{
-				fputs($finalFile,  "<div class='col-md-".$width." mb-3'>
-							<label for='".$name."'>".$name."</label>
-							<input class='form-control' id='".$name."' name='".$name."' placeholder='".$name."' required='' type='".$tag."'>
-							<div class='invalid-feedback'>
-							  ".$name." ungültig
-							</div>
-						      </div>");
-				
-		
-				}
-			}
+		if($value!=""){
+			fputs($finalFile,lookup($tag,$name,$width));
 		}
-		fputs($finalFile, "</div>\n");
 	}
+	fputs($finalFile, "</div>\n");
 }
 fputs($finalFile,  "<br>\n<button class='btn btn-primary btn-lg btn-block' type='submit'>Submit</button>\n");
 fputs($finalFile,  "</form>\n</div>\n");
+
 
 
 flock($script, LOCK_UN);
@@ -108,5 +91,36 @@ flock($finalFile, LOCK_UN);
 fclose($finalFile);	
 
 echo "Skript gespeichert";
+
+function lookup($tag,$name,$width){
+	$tag=refac($tag);
+
+
+	switch($tag){
+		case "":
+		case "br":
+			return "</div>\n<br>\n<div class='row'>\n";
+		case "---":
+		case "hr":
+			return "</div>\n<hr class='mb-4'>\n<div class='row'>\n";
+		case "text":
+			return "<h4 class='mb-3'>".$name."</h4>\n";
+		case "textfield":
+		case "email":
+		case "date":
+		case "time":
+			return "<div class='col-md-".$width." mb-3'>
+			<label for='".$name."'>".$name."</label>
+			<input class='form-control' id='".$name."' name='".$name."' placeholder='".$name."' required='' type='".$tag."'>
+			<div class='invalid-feedback'>
+			  ".$name." ungültig
+			</div>
+		      </div>";
+		default:
+			echo "<br>Unknown Tag: '".$tag."'<br>\n";
+					
+			
+	}
+}
 
 ?>
