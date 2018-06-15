@@ -25,5 +25,7 @@ Die Zugriffsberechtigungen werden nicht von uns
 gemacht, sondern von Typo3 auf der Schulwebsite 
 von dem Lehrer, der es installiert.
 
+<b>TODO.md beachten!</b>
+
 
 
