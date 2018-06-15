@@ -67,7 +67,7 @@ function speichereInput() {
          * sudo chown daemon anmeldungen.csv
          */
         //Nun speichern
-        $fh = fopen(file, "w");
+        $fh = fopen(filePath, "w");
         flock($fh, LOCK_EX);
         fputs($fh, $text);
         flock($fh, LOCK_UN);
