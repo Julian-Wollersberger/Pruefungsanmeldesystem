@@ -114,8 +114,7 @@
             <div class="row">
                 <div class="col-md-12 mb-3">
                 	<label for="date">Script</label>
-			<textarea rows="6" class="form-control" id="textarea" name="textarea"  value="" type="" required="">
-			<?php
+			<textarea rows="6" class="form-control" id="textarea" name="textarea"  value="" type="" required=""><?php
 
 				/*#############################################*/
 				$handle = fopen("../anmeldungen/dyn.script", "r");	
@@ -129,8 +128,7 @@
 
 				/*#############################################*/
 				
-			?>
-			</textarea>	
+			?></textarea>	
 			<div class="invalid-feedback">
                   		Scriptfeld leer
                 	</div>
