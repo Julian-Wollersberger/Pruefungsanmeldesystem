@@ -70,9 +70,9 @@ const offenFilePath = "../anmeldungen/offen.csv";
 
 
 
-if (file_exists("../anmeldungen/offen.csv"))
+if (file_exists(offenFilePath))
 {
-   $eintrag=file("../anmeldungen/offen.csv");
+   $eintrag=file(offenFilePath);
 
    if($eintrag){
 

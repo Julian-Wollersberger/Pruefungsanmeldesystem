@@ -28,4 +28,8 @@ von dem Lehrer, der es installiert.
 <b>TODO.md beachten!</b>
 
 
+# Scripting Engine
+Im Ordner `scripting` gibt es noch etwas spezielles von Kempinger.
+
+
 

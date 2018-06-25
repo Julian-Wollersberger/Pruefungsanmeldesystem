@@ -24,7 +24,7 @@ function aufarbeiten($text)
     // HTML-Tags entfernen
     $text=strip_tags($text);
 
-    // Umbrüche im textarea-Bereich durch <br> ersetzen
+    // Umbrüche im textarea-Bereich durch Leerzeichen ersetzen
     $text = str_replace("\r ", " ", $text);
     $text = str_replace("\n", " ", $text);
 
