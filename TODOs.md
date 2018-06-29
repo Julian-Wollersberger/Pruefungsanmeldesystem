@@ -13,7 +13,9 @@
   Der Rest wird nur vom PHP Interpreter aufgerufen.
 
 Zuverlässigkeit
-+ Unsere Fehlerbehandlung ist teilweise etwas lachs.
++ Unsere Fehlerbehandlung ist teilweise etwas schwach.
+  Wenn ein Fehler passiert, bekommt der Nutzer
+  wahrscheinlich oft keine Meldung.
 + Wenn jemand auf der Adminseite Änderungen an den
   Daten macht und sich währenddessen jemand zur
   Prüfung anmeldet, dann geht diese Anmeldung verloren.
