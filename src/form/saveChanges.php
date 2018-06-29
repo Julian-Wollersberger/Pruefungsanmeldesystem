@@ -1,8 +1,10 @@
 <?php
 
+require("pfade.php");
+
 $data=explode("\n",$_POST['textarea']);
 if($data){
-	$csvHandle = fopen("../anmeldungen/anmeldungen.csv", "w");	
+	$csvHandle = fopen(anmeldungenFilePath, "w");
 
 	if($csvHandle){
 		flock($csvHandle,LOCK_EX);

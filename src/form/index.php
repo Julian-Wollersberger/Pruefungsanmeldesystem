@@ -49,9 +49,7 @@
  *
  */
 
-/* Hier wird das Datum gespeichert.
- * Ist auch in writeOffen.php */
-const offenFilePath = "../anmeldungen/offen.csv";
+require("pfade.php");
 
 
  /** überflüssige Leerzeichen entfernen, strip_tags,

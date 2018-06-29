@@ -9,6 +9,8 @@
  * https://www.w3schools.com/php/php_forms.asp
  */
 
+require("pfade.php");
+
 /** überflüssige Leerzeichen entfernen, strip_tags,
  * Strichpunkte durch Beistriche ersetzen.
  */
@@ -72,7 +74,7 @@ function speichereInput() {
          * sudo chown daemon anmeldungen.csv
          */
         //Nun speichern
-        $fh = fopen("../anmeldungen/anmeldungen.csv", "a");
+        $fh = fopen(anmeldungenFilePath, "a");
         flock($fh, LOCK_EX);
         fputs($fh, $text);
         flock($fh, LOCK_UN);
