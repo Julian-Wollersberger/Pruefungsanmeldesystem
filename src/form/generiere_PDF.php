@@ -3,6 +3,7 @@
 
 class PDF extends FPDF
 {
+    
 	// Load data
 	function LoadData($file)
 	{
@@ -85,11 +86,13 @@ class PDF extends FPDF
 
 	$pdf = new PDF();
 
+    $path='../anmeldungen/anmeldungen.csv';
+
 
 	// Column headings
 	$header = array('Vorname', 'Nachname', 'Email', 'Klasse', 'Datum', 'Zeit','Fach');
 	// Data loading
-	$data = $pdf->LoadData('../anmeldungen/anmeldungen.csv');
+	$data = $pdf->LoadData($path);
 	$pdf->SetFont('Arial','',12);
 	
 	$pdf->AddPage();
