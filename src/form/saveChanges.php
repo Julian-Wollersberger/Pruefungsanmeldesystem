@@ -2,19 +2,17 @@
 
 require("pfade.php");
 
-$data=explode("\n",$_POST['textarea']);
-if($data){
-	$csvHandle = fopen(anmeldungenFilePath, "w");
+$data = $_POST['textarea'];
 
-	if($csvHandle){
-		flock($csvHandle,LOCK_EX);
-		foreach($data as $line){
-			echo $line;
-			fputs($csvHandle,$line.str_replace('\n','\r\n',$line));
-		}
-		flock($csvHandle,LOCK_UN);
-		fclose($csvHandle);
-	}
+if ($data) {
+    $csvHandle = fopen(anmeldungenFilePath, "w");
+
+    if ($csvHandle) {
+        flock($csvHandle, LOCK_EX);
+        fputs($csvHandle, $data);
+        flock($csvHandle, LOCK_UN);
+        fclose($csvHandle);
+    }
 }
 
 ?>

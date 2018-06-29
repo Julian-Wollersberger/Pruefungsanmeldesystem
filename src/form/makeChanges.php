@@ -11,7 +11,7 @@
 						<textarea rows="12" class="form-control" id="textarea" name="textarea"  value="" type="" required=""><?php
 
 						/*#############################################*/
-                        require("pfade.php");
+                        //require("pfade.php"); // wird schon in admin.php reqiered.
 						$handle = fopen(anmeldungenFilePath, "r");
 
 						if ($handle){
