@@ -8,7 +8,7 @@ if($data){
 		flock($csvHandle,LOCK_EX);
 		foreach($data as $line){
 			echo $line;
-			fputs($csvHandle,$line);
+			fputs($csvHandle,$line.str_replace('\n','\r\n',$line));
 		}
 		flock($csvHandle,LOCK_UN);
 		fclose($csvHandle);
