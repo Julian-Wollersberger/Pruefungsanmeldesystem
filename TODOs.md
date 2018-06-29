@@ -20,13 +20,3 @@ Zuverlässigkeit
   Daten macht und sich währenddessen jemand zur
   Prüfung anmeldet, dann geht diese Anmeldung verloren.
 
-# Präsentation
-+ Anforderung
-+ Ziel
-+ Lösungsweg: 
-  + was wurde umgesetzt
-  + was könnte man noch machen
-  + Beides
-  + Technik, Architektur
-  + Probleme
-+ Ergebnis zeigen
