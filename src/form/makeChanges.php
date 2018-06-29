@@ -11,7 +11,8 @@
 						<textarea rows="12" class="form-control" id="textarea" name="textarea"  value="" type="" required=""><?php
 
 						/*#############################################*/
-						$handle = fopen("../anmeldungen/anmeldungen.csv", "r");	
+                        require("pfade.php");
+						$handle = fopen(anmeldungenFilePath, "r");
 
 						if ($handle){
 							while (($line = fgets($handle)) !== false) {

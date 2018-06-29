@@ -1,5 +1,6 @@
 <?php
 	require('fpdf.php');
+	require("pfade.php");
 
 class PDF extends FPDF
 {
@@ -86,13 +87,10 @@ class PDF extends FPDF
 
 	$pdf = new PDF();
 
-    $path='../anmeldungen/anmeldungen.csv';
-
-
 	// Column headings
 	$header = array('Vorname', 'Nachname', 'Email', 'Klasse', 'Datum', 'Zeit','Fach');
 	// Data loading
-	$data = $pdf->LoadData($path);
+	$data = $pdf->LoadData(anmeldungenFilePath);
 	$pdf->SetFont('Arial','',12);
 	
 	$pdf->AddPage();

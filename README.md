@@ -32,6 +32,10 @@ Damit künnte man Missbrauch nachweisen.
 
 <b>TODO.md beachten!</b>
 
+## Grundgerüst
+Wir haben außerdem eine Datei `grundgeruest.html` erstellt, in
+der alle Eingabe-Elemente von Bootstrap enthalten sind.
+Daraus kann man sich etwas zusammenbasteln.
 
 # Scripting Engine
 Im Ordner `scripting` gibt es noch etwas spezielles von Kempinger.

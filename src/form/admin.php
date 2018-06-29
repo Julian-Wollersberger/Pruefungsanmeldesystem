@@ -21,9 +21,7 @@
   <body class="bg-light">
     <?php
 
-    /* Hier wird das Datum gespeichert.
-    * Ist auch in index.php */
-    const offenFilePath = "../anmeldungen/offen.csv";
+    require("pfade.php");
 
     /** überflüssige Leerzeichen entfernen, strip_tags,
      * Strichpunkte durch Beistriche ersetzen.

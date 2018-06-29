@@ -94,23 +94,21 @@ $today=date("Y-m-d H:i");
 $von=$date_von." ".$time_von;
 $bis=$date_bis." ".$time_bis;
 
-
-echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist offen von<br>".$von."<br>bis<br>".$bis."</h4></div><br>";
-
-
-/** Inkludiere Das Formular oder die Nicht-offen-Meldung */
-
-if($today>$von && $today<$bis)
-{
-    require("form.html");
+if(!$von || !$bis) {
+    echo "ERROR";
 }
-else if($today<$von){
-    require("no_form_future.html");
-}
-else{
-    require("no_form_past.html");
-}
+else {
+    echo "<div class=\"col-md-8 order-md-1 mx-auto text-center\"><h4>Die Anmeldung ist offen von<br>" . $von . "<br>bis<br>" . $bis . "</h4></div><br>";
 
+    /** Inkludiere Das Formular oder die Nicht-offen-Meldung */
+    if ($today > $von && $today < $bis) {
+        require("form.html");
+    } else if ($today < $von) {
+        require("no_form_future.html");
+    } else {
+        require("no_form_past.html");
+    }
+}
 
 
 //require("form.html");
