@@ -106,8 +106,11 @@ if($today>$von && $today<$bis)
 {
     require("form.html");
 }
-else {
-    require("no_form.html");
+else if($today<$von){
+    require("no_form_future.html");
+}
+else{
+    require("no_form_past.html");
 }
 
 
