@@ -12,6 +12,11 @@
   download_CSV.php, generiere_PDF.php.  
   Der Rest wird nur vom PHP Interpreter aufgerufen.
 
+Zuverlässigkeit
++ Unsere Fehlerbehandlung ist teilweise etwas lachs.
++ Wenn jemand auf der Adminseite Änderungen an den
+  Daten macht und sich währenddessen jemand zur
+  Prüfung anmeldet, dann geht diese Anmeldung verloren.
 
 # Präsentation
 + Anforderung

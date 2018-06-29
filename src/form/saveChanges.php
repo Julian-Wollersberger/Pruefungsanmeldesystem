@@ -12,6 +12,8 @@ if ($data) {
         fputs($csvHandle, $data);
         flock($csvHandle, LOCK_UN);
         fclose($csvHandle);
+
+        echo "Daten gespeichert";
     }
 }
 
