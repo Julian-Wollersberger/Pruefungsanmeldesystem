@@ -40,5 +40,29 @@ Daraus kann man sich etwas zusammenbasteln.
 # Scripting Engine
 Im Ordner `scripting` gibt es noch etwas spezielles von Kempinger.
 
+#### Befehle
+Befehle werden generell mit `\[identifier=name#breite]` bezeichnet.  
+Die Breite is von 0-12, wobei 12 die maximal verfügbare Breite ist.
+<br><br><br>
+##### Neue Zeile
+> leere Zeile oder \[br]
+
+##### Trennlinie
+> --- oder \[hr]
+
+##### Text 
+> \[text=feldname#breite]
+
+##### Textfeld
+> \[textfield=feldname#breite]
+
+##### Emailfeld
+> \[email=feldname#breite]
+
+##### Datum
+> \[date=feldname#breite]
+
+##### Zeitfeld
+> \[time=feldname#breite]
 
 
