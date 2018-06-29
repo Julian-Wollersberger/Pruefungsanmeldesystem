@@ -1,7 +1,7 @@
-<div class="py-5 text-center">
+        <div class="py-5 text-center">
 			
-			<h2>CSV EDIT</h2><link rel="shortcut icon" href="/fileadmin/template/img/htl.png" type="image/png">
-		</div>
+			<h2>Daten direkt bearbeiten</h2>
+	    
 			<form  novalidate="" action="saveChanges.php" method="post">
 
 				<hr class="mb-4">
@@ -33,5 +33,5 @@
 				</div>
 
 			</form>	
-
+        </div>
 		

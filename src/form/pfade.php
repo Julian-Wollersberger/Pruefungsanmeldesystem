@@ -12,3 +12,4 @@ const anmeldungenFilePath = "../anmeldungen/anmeldungen.csv";
 /* Hier wird das Datum gespeichert.
  * Ist auch in index.php */
 const offenFilePath = "../anmeldungen/offen.csv";
+?>
